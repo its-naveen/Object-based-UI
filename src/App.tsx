@@ -1,12 +1,12 @@
-import { Container } from '@mui/material'
-import RenderForm from './components/RenderForm/RenderForm'
-import './App.css'
-import { loginForm } from './forms/login'
+import { Box, Container } from '@mui/material'
+import Login from './pages/Login/Login';
 
 export default function App() {
   return (
-    <Container>
-      <RenderForm formFields={loginForm}/>
+    <Container maxWidth='xl'>
+      <Box>
+        <Login />
+      </Box>
     </Container>
   );
 };
