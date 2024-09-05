@@ -1,12 +1,10 @@
-import { Box, Container } from '@mui/material'
 import Login from './pages/Login/Login';
+import Layout from './pages/Layout/Layout';
 
 export default function App() {
   return (
-    <Container maxWidth='xl'>
-      <Box>
-        <Login />
-      </Box>
-    </Container>
+    <Layout>
+      <Login />
+    </Layout>
   );
 };

@@ -1,0 +1,21 @@
+main {
+  width: 100%;
+  height: 100vh;
+  nav {
+    width: inherit;
+    height: 6%;
+  }
+  .content {
+    display: grid;
+    grid-template-columns: 15% 85%;
+    height: 94%;
+  }
+  aside {
+    width: 100%;
+    height: 100%;
+  }
+  section {
+    width: 100%;
+    height: 100%;
+  }
+}
