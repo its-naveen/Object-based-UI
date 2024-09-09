@@ -1,15 +1,11 @@
-import CustomizedAccordions from "../../components/Sidebar/Sidebar";
+import Appbar from "./components/Appbar/Appbar";
 
 export default function Layout({ children }: any) {
   return (
     <main>
-      <nav>
-
-      </nav>
+      <Appbar />
       <div className="content">
-        <aside>
-          <CustomizedAccordions />
-        </aside>
+        {/* <aside></aside> */}
         <section>
           {children}
         </section>

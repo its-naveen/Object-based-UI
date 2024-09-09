@@ -1,10 +1,10 @@
-import Login from './pages/Login/Login';
-import Layout from './pages/Layout/Layout';
+import Layout from './Layout';
+import Landing from './pages/Landing/Landing';
 
 export default function App() {
   return (
     <Layout>
-      <Login />
+      <Landing />
     </Layout>
   );
 };
