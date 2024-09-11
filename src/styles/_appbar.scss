@@ -1,25 +1,25 @@
 .appbar {
-  margin: 1.2rem auto;
-  padding: 0.8rem 1.6rem;
-  border-radius: 5rem;
-  background: transparent;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
-  z-index: 100;
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
-  .appbar-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .appbar-title {
-      margin-left: 1rem;
+  padding: 0 $size-md;
+  .main-search {
+    @include flex(center, center);
+    .paper {
+      @include flex(center, center);
+      border: solid 1px $primary-clr;
+      border-radius: $radius;
+      box-shadow: none;
+      width: 300px;
+      padding: 0 $size-sm;
+    }
+  }
+  .user-action {
+    @include flex(space-between, center);
+  }
+}
+
+@media (max-width: 900px) {
+  .appbar {
+    .main-search {
+      display: none;
     }
   }
 }

@@ -1,0 +1,19 @@
+button.btn-primary {
+  background: linear-gradient(to bottom right, $primary-clr, $primary-clr);
+  border-radius: $radius;
+  color: $light;
+  padding: $size-sm $size-lg;
+  &:hover {
+    background: linear-gradient(to bottom right, $primary-clr, $primary-clr);
+  }
+}
+
+button.btn-secondary {
+  border: solid 1px linear-gradient(to bottom right, $primary-clr, $primary-clr);
+  border-radius: $radius;
+  color: $primary-clr;
+  padding: $size-sm $size-lg;
+  &:hover {
+    border: solid 1px linear-gradient(to bottom right, $primary-clr, $primary-clr);
+  }
+}

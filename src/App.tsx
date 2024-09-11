@@ -1,10 +1,11 @@
-import Layout from './Layout';
-import Landing from './pages/Landing/Landing';
+import React from "react";
+
+const Layout = React.lazy(() => import("./Layout"));
 
 export default function App() {
   return (
     <Layout>
-      <Landing />
+      <h1>Context</h1>
     </Layout>
   );
-};
+}
