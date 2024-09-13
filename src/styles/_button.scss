@@ -6,6 +6,9 @@ button.btn-primary {
   &:hover {
     background: linear-gradient(to bottom right, $primary-clr, $primary-clr);
   }
+  // @include xl {
+  //   padding: $size-md $size-xl;
+  // }
 }
 
 button.btn-secondary {

@@ -16,8 +16,8 @@ export default function CustomBtn(props: BtnProps) {
     <Button
       className={`${props.primary ? 'btn-primary' : 'btn-secondary'}`}
       variant={`${props.primary ? 'contained' : 'outlined'}`}
-      aria-label="button"
-      role={`${props.children} button`}
+      aria-label={`${props.children}-button`}
+      role={`${props.children}-button`}
       onClick={props.click}
       startIcon={props.startIcon ? <Icons iconKey={props.startIcon} type={props.type} /> : undefined}>
       {props.children}

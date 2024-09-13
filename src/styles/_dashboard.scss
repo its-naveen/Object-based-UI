@@ -1,0 +1,10 @@
+.dashboard {
+  .grid-item, .grid-filter {
+    background: $light;
+    border-radius: $size-sm;
+    height: 300px;
+  }
+  .grid-filter {
+    height: 80px;
+  }
+}

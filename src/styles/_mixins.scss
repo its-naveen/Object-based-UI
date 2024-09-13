@@ -1,11 +1,36 @@
-@mixin flex($justify, $align) {
+@mixin flex($justify, $align, $direction) {
   display: flex;
   justify-content: $justify;
   align-items: $align;
+  flex-direction: $direction;
 }
 
 @mixin grid($col, $gap) {
   display: grid;
   grid-template-columns: repeat($col, 100/$col);
   gap: $gap;
+}
+
+@mixin sm {
+  @media (min-width: #{$screen-sm}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$screen-md}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$screen-lg}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{$screen-xl}) {
+    @content;
+  }
 }

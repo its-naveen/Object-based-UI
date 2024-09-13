@@ -4,10 +4,36 @@ $secondary-clr: lightblue;
 $tertiary-clr: darkblue;
 $light: #ffffff;
 $dark: #000000;
+$mild: lightgray;
+$active: #00CCDD;
+$notification: palevioletred;
+$bg-clr: #f0f0f0;
 
 // size
-$size-sm: 0.3rem;
+$size-sm: 0.5rem;
 $size-md: 0.9rem;
 $size-lg: 1.2rem;
 $size-xl: 2rem;
+
 $radius: 50rem;
+
+// font size
+$font-sm: 12px;
+$font-md: 14px;
+$font-lg: 16px;
+$font-xl: 18px;
+$font-xxl: 22px;
+$font-xxxl: 30px;
+
+// screen
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1400px;
+
+:root {
+  --primary-clr: #{$primary-clr};
+  --secondary-clr: #{$secondary-clr};
+  --active-clr: #{$active};
+  --icon-badge-clr: #{$notification};
+}

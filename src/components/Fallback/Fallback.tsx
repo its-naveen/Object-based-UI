@@ -1,10 +1,10 @@
-import { Box } from "@mui/material";
-import Icons from "../../icons";
+import React from "react";
+const Icons = React.lazy(() => import("../../icons"));
 
 export default function Fallback() {
   return (
-    <Box sx={{ m: 20 }}>
+    <section>
       <Icons iconKey="loader" type="dark" />
-    </Box>
+    </section>
   );
 }
