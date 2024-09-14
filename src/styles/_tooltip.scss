@@ -1,0 +1,55 @@
+.tooltip {
+  position: relative;
+  display: inline-block; // Ensure proper positioning for inline elements
+
+  .tooltip-label {
+    display: none;
+    position: absolute;
+    background: $dark;
+    color: $light;
+    padding: $size-sm;
+    border-radius: $size-sm;
+    box-shadow: 0 0 4px 0 $mild;
+    white-space: nowrap; // Prevents the label from wrapping
+    z-index: 1000;
+    transform: translate(-50%, -50%); // Adjusts the tooltip placement
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .top {
+    bottom: 50%; // Position above the element
+    left: 50%; // Horizontally centered
+    transform: translate(-50%, -10px); // Adjust to lift up
+  }
+
+  .bottom {
+    top: 50%; // Position below the element
+    left: 50%; // Horizontally centered
+    transform: translate(-50%, 10px); // Adjust to move down
+  }
+
+  .right {
+    top: 10%; // Vertically centered
+    left: 110%; // Position to the right
+    transform: translate(10px, -50%); // Adjust to move right
+  }
+
+  .left {
+    top: 10%; // Vertically centered
+    right: 110%; // Position to the left
+    transform: translate(-10px, -50%); // Adjust to move left
+  }
+
+  &:hover .tooltip-label {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

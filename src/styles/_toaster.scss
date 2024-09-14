@@ -1,0 +1,31 @@
+.toaster {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  background-color: $light;
+  color: $dark;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1000;
+  transition: opacity 0.5s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.toaster.info {
+  color: $primary-clr;
+  border: solid 1px $primary-clr;
+}
+
+.toaster.success {
+  color: #4caf50;
+  border: solid 1px #4caf50;
+}
+
+.toaster.error {
+  color: #f44336;
+  border: solid 1px #f44336;
+}
+
+.toaster p {
+  margin: 0;
+}

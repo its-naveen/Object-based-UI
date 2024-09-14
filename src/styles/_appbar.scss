@@ -1,40 +1,8 @@
 .appbar {
-  width: 100%;
-  padding: 0 $size-md;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  // box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
-  border-bottom: solid 1px $mild;
-  box-sizing: border-box;
-  background: $light;
-  .appbar-grid {
-    @include flex(space-between, center, row);
-  }
-  .main-search {
-    @include flex(center, center, row);
-    .paper {
-      @include flex(center, center, row);
-      border: solid 1px $mild;
-      border-radius: $radius;
-      box-shadow: none;
-      width: 300px;
-      padding: 0 $size-sm;
-    }
-  }
   .user-action {
     @include flex(right, center, row);
     .action {
-      padding: $size-sm;
-    }
-  }
-}
-
-@media (max-width: 900px) {
-  .appbar {
-    .main-search {
-      display: none;
+      padding-left: $size-sm;
     }
   }
 }

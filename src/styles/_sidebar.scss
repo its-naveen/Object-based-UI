@@ -1,9 +1,9 @@
 .sidebar {
-  background: $light;
-  height: 93vh;
-  position: fixed;
-  left: 0;
-  top: 7vh;
+  background: red;
+  // height: 93vh;
+  // position: fixed;
+  // left: 0;
+  // top: 7vh;
   // border-right: solid 1px $mild;
   @include flex(column, top, column);
   .active-link, .link {

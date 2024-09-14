@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+
 const Icons = React.lazy(() => import("../../icons"));
+const Tooltip = React.lazy(() => import('../../customComponents/Tooltip/Tooltip'));
 
 interface MenuProps {
   label: string;
@@ -23,21 +25,23 @@ export default function Sidebar() {
     }
   ];
   return (
-    <section className="sidebar">
+    <aside className="sidebar">
       {
         menus.map((menu: MenuProps) => (
           <NavLink key={menu.label} to={menu.link} className={({ isActive }) =>
             isActive ? 'active-link' : 'link'
           } role={`${menu.label}-icon`} aria-label={`${menu.label}-icon`}>
             {({ isActive }) => (
-              <Icons
-                iconKey={menu.label}
-                type={isActive ? 'active' : 'dark'}
-              />
+              <Tooltip position='right' label={menu.label}>
+                <Icons
+                  iconKey={menu.label}
+                  type={isActive ? 'active' : 'dark'}
+                />
+              </Tooltip>
             )}
           </NavLink>
         ))
       }
-    </section>
+    </aside>
   );
 }

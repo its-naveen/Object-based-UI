@@ -8,7 +8,18 @@
 @import './dashboard.scss';
 @import './user-creation.scss';
 @import './setting.scss';
+@import './tooltip.scss';
+@import './breadcrumb.scss';
+@import './typography.scss';
+@import './notfound.scss';
+@import './toaster.scss';
 
 body {
   margin: 0;
+  color: $dark;
+}
+
+a {
+  text-decoration: none;
+  color: $dark;
 }

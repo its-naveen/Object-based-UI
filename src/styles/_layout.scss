@@ -1,20 +1,77 @@
 .layout {
-  .content {
-    background: $bg-clr;
-    min-height: 92vh;
-    overflow: scroll;
-    padding-top: 5vh;
-    width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .appbar {
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background:  $light;
+    z-index: 1000;
+    padding: 0 $size-md;
+    padding-left: $size-lg;
     box-sizing: border-box;
-    @include flex(space-between, top, row);
-    .aside {
-      width: 3vw;
+    box-shadow: 0 0 4px 0 $mild;
+    @include flex(space-between, center, row)
+  }
+
+  .main-section {
+    flex-grow: 1;
+    margin-top: 60px;
+    padding: 20px;
+    margin-left: 60px; // Offset for sidebar
+    overflow-y: auto;
+    background: $mild;
+  }
+
+  .sidebar {
+    width: 60px;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    height: calc(100vh - 60px);
+    background: $light;
+    z-index: 999;
+    border-right: solid 1px $mild;
+  }
+
+  // Media Queries for responsiveness
+  @media screen and (max-width: 768px) {
+    .sidebar {
+      width: 60px; // Adjust sidebar width for tablets
     }
-    .context {
-      width: 97vw;
-      box-sizing: border-box;
-      padding: 1%;
-      padding-left: 2%;
+
+    .main-section {
+      margin-left: 60px; // Adjust margin for smaller sidebar
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .sidebar {
+      width: 60px; // Further reduce sidebar width for mobile
+    }
+
+    .main-section {
+      margin-left: 60px; // Adjust main content accordingly
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+
+    .sidebar {
+      position: relative;
+      width: 100%;
+      height: auto; // Stack the sidebar on top for mobile
+      top: 0;
+    }
+
+    .main-section {
+      margin-left: 0;
+      margin-top: 0;
     }
   }
 }

@@ -1,0 +1,21 @@
+.breadcrumb {
+  padding-bottom: $size-md;
+  @include flex(left, center, row);
+
+  .link {
+    color: $dark;
+  }
+
+  .active {
+    color: $active;
+  }
+
+  .breadcrumb-label {
+    text-transform: capitalize;
+    @include flex(left, center, row);
+
+    .label-icon {
+      padding: 0 $size-sm;
+    }
+  }
+}
