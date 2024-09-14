@@ -12,6 +12,7 @@
 
   .breadcrumb-label {
     text-transform: capitalize;
+    font-size: $font-sm;
     @include flex(left, center, row);
 
     .label-icon {

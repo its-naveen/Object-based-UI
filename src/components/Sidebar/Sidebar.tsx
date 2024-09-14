@@ -22,10 +22,10 @@ export default function Sidebar() {
     {
       label: 'setting',
       link: '/setting'
-    }
+    },
   ];
   return (
-    <aside className="sidebar">
+    <aside className="sidebar" role='sidebar' aria-label='sidebar'>
       {
         menus.map((menu: MenuProps) => (
           <NavLink key={menu.label} to={menu.link} className={({ isActive }) =>

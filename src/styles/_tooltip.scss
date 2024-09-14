@@ -1,6 +1,6 @@
 .tooltip {
   position: relative;
-  display: inline-block; // Ensure proper positioning for inline elements
+  display: inline-block;
 
   .tooltip-label {
     display: none;
@@ -10,34 +10,35 @@
     padding: $size-sm;
     border-radius: $size-sm;
     box-shadow: 0 0 4px 0 $mild;
-    white-space: nowrap; // Prevents the label from wrapping
+    white-space: nowrap;
     z-index: 1000;
-    transform: translate(-50%, -50%); // Adjusts the tooltip placement
+    transform: translate(-50%, -50%);
     animation: fadeIn 0.3s ease-in-out;
+    font-size: $font-sm;
   }
 
   .top {
-    bottom: 50%; // Position above the element
-    left: 50%; // Horizontally centered
-    transform: translate(-50%, -10px); // Adjust to lift up
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, -10px);
   }
 
   .bottom {
-    top: 50%; // Position below the element
-    left: 50%; // Horizontally centered
-    transform: translate(-50%, 10px); // Adjust to move down
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, 10px);
   }
 
   .right {
-    top: 10%; // Vertically centered
-    left: 110%; // Position to the right
-    transform: translate(10px, -50%); // Adjust to move right
+    top: 20%;
+    left: 100%;
+    transform: translate(10px, -50%);
   }
 
   .left {
-    top: 10%; // Vertically centered
-    right: 110%; // Position to the left
-    transform: translate(-10px, -50%); // Adjust to move left
+    top: 10%;
+    right: 110%;
+    transform: translate(-10px, -50%);
   }
 
   &:hover .tooltip-label {

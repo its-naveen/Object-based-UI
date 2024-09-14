@@ -41,12 +41,12 @@ export default function Icons({ click, iconKey, type, badge, count }: IconProps)
 
   return (
     badge ? (
-      <IconButton sx={{ color }} onClick={click} role="icon-button" aria-label={`${iconKey}-button`}>
+      <IconButton sx={{ color }} onClick={click} role="icon button" aria-label={`${iconKey} button`}>
         <Badge badgeContent={count} color="secondary">
           {icons[iconKey]}
         </Badge>
       </IconButton>
-    ) : <IconButton sx={{ color }} role="icon-button" aria-label={`${iconKey}-button`}>
+    ) : <IconButton sx={{ color }} role="icon button" aria-label={`${iconKey} button`}>
       {icons[iconKey]}
     </IconButton>
   );

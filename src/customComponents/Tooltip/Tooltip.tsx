@@ -8,7 +8,7 @@ type TooltipProps = {
 
 export default function Tooltip({ position, label, children }: TooltipProps) {
   return (
-    <div className="tooltip">
+    <div className="tooltip" role="tooltip" aria-label="tooltip">
       <p
         className={`tooltip-label ${
           position === 'top' ? 'top' : ''

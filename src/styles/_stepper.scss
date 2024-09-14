@@ -1,0 +1,16 @@
+.stepper-wrapper {
+  @include flex(left, center, column);
+  .stepper, .active-stepper {
+    padding: $size-xl $size-md;
+    cursor: pointer;
+    font-size: $font-md;
+  }
+  .active-stepper {
+    color: $primary-clr;
+    // border-bottom: solid 2px $primary-clr;
+  }
+  .stepper-content {
+    text-align: center;
+    padding: $size-xl auto;
+  }
+}

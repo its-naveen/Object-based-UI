@@ -1,0 +1,15 @@
+.tab-wrapper {
+  .tab, .active-tab {
+    padding: $size-sm $size-md;
+    cursor: pointer;
+    font-size: $font-md;
+  }
+  .active-tab {
+    color: $primary-clr;
+    border-bottom: solid 2px $primary-clr;
+  }
+  .tab-content {
+    text-align: center;
+    padding: $size-xl auto;
+  }
+}

@@ -3,6 +3,7 @@ button.btn-primary {
   border-radius: $radius;
   color: $light;
   padding: $size-sm $size-lg;
+  font-size: $font-sm;
   &:hover {
     background: linear-gradient(to bottom right, $primary-clr, $primary-clr);
   }
@@ -16,6 +17,7 @@ button.btn-secondary {
   border-radius: $radius;
   color: $primary-clr;
   padding: $size-sm $size-lg;
+  font-size: $font-sm;
   &:hover {
     border: solid 1px linear-gradient(to bottom right, $primary-clr, $primary-clr);
   }

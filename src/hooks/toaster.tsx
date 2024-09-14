@@ -7,19 +7,27 @@ const ToastContext = createContext<any>(null);
 export const useToast = () => useContext(ToastContext);
 
 export const ToastProvider = ({ children }: { children: React.ReactNode }) => {
-  const [toast, setToast] = useState<{ message: string; type: string } | null>(null);
+  const [toasts, setToasts] = useState<Array<{ id: number; message: string; type: string }>>([]);
 
   const showToast = (message: string, type: string = "info") => {
-    setToast({ message, type });
+    const newToast = { id: Date.now(), message, type }; // Unique ID for each toast
+    setToasts((prevToasts) => [...prevToasts, newToast]);
 
-    // Hide the toast after 3 seconds
-    setTimeout(() => setToast(null), 3000);
+    setTimeout(() => removeToast(newToast.id), 3000);
+  };
+
+  const removeToast = (id: number) => {
+    setToasts((prevToasts) => prevToasts.filter((toast) => toast.id !== id));
   };
 
   return (
     <ToastContext.Provider value={{ showToast }}>
       {children}
-      {toast && <Toaster message={toast.message} type={toast.type} />}
+      <div className="toast-container">
+        {toasts.map((toast) => (
+          <Toaster key={toast.id} message={toast.message} type={toast.type} />
+        ))}
+      </div>
     </ToastContext.Provider>
   );
 };

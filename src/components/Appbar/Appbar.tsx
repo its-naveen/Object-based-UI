@@ -7,11 +7,11 @@ const Icons = React.lazy(() => import("../../icons"));
 
 export default function Appbar() {
   return (
-    <nav className="appbar">
-      <h2 className="appbar-title">
+    <nav className="appbar" role="appbar" aria-label="appbar">
+      <h4 className="appbar-title">
         {/* <Icons iconKey="globe" type="dark" /> */}
         webapp.com
-      </h2>
+      </h4>
       <div className='user-action'>
         <Box className='action'>
           <Tooltip position="bottom" label="notification">

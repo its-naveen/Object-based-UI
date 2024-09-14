@@ -1,14 +1,21 @@
-.toaster {
+.toast-container {
   position: fixed;
-  top: 30px;
+  top: 30px;  
   left: 50%;
+  transform: translateX(-50%); 
+  z-index: 1000;
+}
+
+.toaster {
   background-color: $light;
   color: $dark;
-  padding: 10px;
-  border-radius: 5px;
-  z-index: 1000;
+  padding: $size-sm;
+  border-radius: $size-sm;
+  margin-bottom: 10px; 
+  min-width: 250px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   transition: opacity 0.5s ease-in-out;
-  transform: translateX(-50%);
+  opacity: 1;
 }
 
 .toaster.info {
@@ -28,4 +35,6 @@
 
 .toaster p {
   margin: 0;
+  font-size: 16px;
+  text-align: center;
 }

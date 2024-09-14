@@ -1,7 +1,8 @@
 .setting {
-  .grid-item {
+  .page-container {
     background: $light;
     border-radius: $size-sm;
     height: 80vh;
+    padding: $size-md;
   }
 }
