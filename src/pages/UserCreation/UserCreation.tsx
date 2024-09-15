@@ -1,11 +1,27 @@
 import React from 'react';
 import Grid from '@mui/material/Grid2';
-import { capitalize } from 'lodash';
+import Stepper from '../../customComponents/Stepper/Stepper';
+import Button from '../../customComponents/Button/Button';
 
 const Breadcrumb = React.lazy(() => import('../../customComponents/Breadcrumb/Breadcrumb'));
 
 export default function UserCreation() {
-  const [activeStep, setActiveStep] = React.useState(1);
+  const [activeStep, setActiveStep] = React.useState(0);
+
+  const handleNext = () => setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  const handleBack = () => setActiveStep((prevActiveStep) => prevActiveStep - 1);
+
+  const steps = [
+    {
+      label: 'primary details',
+    },
+    {
+      label: 'additional details',
+    },
+    {
+      label: 'confirmation',
+    }
+  ];
 
   const breadcrumbOption = [
     {
@@ -18,35 +34,16 @@ export default function UserCreation() {
     },
   ]
 
-  const tabs = [
-    {
-      label: 'primary details',
-      step: 1,
-    },
-    {
-      label: 'additional details',
-      step: 2,
-    },
-    {
-      label: 'confirmation',
-      step: 3,
-    }
-  ];
-
-  const handleActiveStepChange = (step: number) => {
-    setActiveStep(step);
-  };
-
   const handleGetStepContent = () => {
     switch (activeStep) {
+      case 0:
+        return <h1>Provide primary details</h1>
       case 1:
-        return <h1>Provide your primary details</h1>
+        return <h1>Provide additional details</h1>
       case 2:
-        return <h1>Provide your additional details</h1>
-      case 3:
         return <h1>User creation Confirmation</h1>
       default:
-        return <h1>Provide your primary details</h1>
+        return <h1>Provide primary details</h1>
     }
   }
 
@@ -56,21 +53,17 @@ export default function UserCreation() {
       <Breadcrumb options={breadcrumbOption} />
       <Grid container spacing={2}>
         <Grid size={2} className='page-container'>
-          <section className='stepper-wrapper'>
-            {
-              tabs.map((tab: any, idx: number) => (
-                <span 
-                  onClick={() => handleActiveStepChange(tab.step)} 
-                  className={`${activeStep === tab.step ? 'active-stepper' : 'stepper'}`}>
-                  {idx + 1}. {capitalize(tab.label)}
-                </span>
-              ))
-            }
-          </section>
+          <Stepper steps={steps} activeStep={activeStep} />
         </Grid>
-        <Grid className="grid-item" size={10}>
-          <div className='stepper-content'>
+        <Grid className='user-creation-content' size={10}>
+          <div className='user-creation-steps'>
             {handleGetStepContent()}
+            {activeStep !== 0 && <Button primary={false} type="dark" click={handleBack} disabled={activeStep === 0}>
+              Back
+            </Button>}
+            {activeStep !== steps.length && <Button primary={true} type="dark" click={handleNext}>
+              {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+            </Button>}
           </div>
         </Grid>
       </Grid>

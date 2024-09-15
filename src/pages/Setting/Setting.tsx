@@ -24,7 +24,7 @@ export default function Setting() {
       step: 1,
     },
     {
-      label: 'intermediate',
+      label: 'additional',
       step: 2,
     },
     {
@@ -42,7 +42,7 @@ export default function Setting() {
       case 1:
         return <h1>Basic Setting</h1>
       case 2:
-        return <h1>Intermediate Setting</h1>
+        return <h1>Additional Setting</h1>
       case 3:
         return <h1>Advance Setting</h1>
       default:

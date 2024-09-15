@@ -1,16 +1,109 @@
-.stepper-wrapper {
-  @include flex(left, center, column);
-  .stepper, .active-stepper {
-    padding: $size-xl $size-md;
-    cursor: pointer;
-    font-size: $font-md;
-  }
-  .active-stepper {
-    color: $primary-clr;
-    // border-bottom: solid 2px $primary-clr;
-  }
-  .stepper-content {
+/* Container for the entire stepper */
+.stepper-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-top: $size-lg;
+}
+
+/* Each step and its indicator */
+.step-container {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Wraps on smaller screens */
+}
+
+/* Wrapper for step indicator and vertical line */
+.step-indicator-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 40px;
+}
+
+/* Step indicator (circle) */
+.step-indicator {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  color: $light;
+  text-align: center;
+  line-height: 1.8rem;
+  margin-bottom: 10px;
+  z-index: 1;
+}
+
+/* Active step style */
+.active-step {
+  background-color: $active;
+}
+
+/* Completed step style */
+.completed-step {
+  background-color: $primary-clr;
+}
+
+/* Inactive step style */
+.inactive-step {
+  background-color: gray;
+}
+
+/* Vertical connecting line */
+.vertical-line {
+  width: 2px;
+  height: 50px;
+  position: absolute;
+  top: 20px;
+  z-index: 0;
+}
+
+/* Completed line style */
+.completed-line {
+  background-color: $primary-clr;
+}
+
+/* Inactive line style */
+.inactive-line {
+  background-color: gray;
+}
+
+/* Step label */
+.step-label {
+  padding-top: 0.25rem;
+  margin-left: $size-sm;
+  font-size: $font-md;
+}
+
+/* Active label style */
+.active-label {
+  font-weight: bold;
+  color: $active;
+}
+
+.stepper-complition-msg {
+  color: $primary-clr;
+  border: solid 1px $primary-clr;
+  padding: $size-sm;
+  border-radius: $size-sm;
+  p {
+    margin: 0;
     text-align: center;
-    padding: $size-xl auto;
+    font-size: $font-sm;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .step-label {
+    font-size: $font-sm;
+    margin-left: 10px;
+  }
+
+  .step-circle {
+    width: $size-sm;
+    height: $size-sm;
+    line-height: $size-sm;
   }
 }

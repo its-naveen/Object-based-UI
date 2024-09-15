@@ -1,7 +1,11 @@
 .user-creation {
-  .grid-item {
+  .user-creation-content {
     background: $light;
-    border-radius: $size-sm;
     min-height: 80vh;
+    border-radius: $size-sm;
+  }
+  .user-creation-steps {
+    padding: $size-md;
+    text-align: center;
   }
 }
