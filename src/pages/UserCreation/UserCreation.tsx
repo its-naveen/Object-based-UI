@@ -19,6 +19,9 @@ export default function UserCreation() {
       label: 'additional details',
     },
     {
+      label: 'professional details',
+    },
+    {
       label: 'confirmation',
     }
   ];
@@ -40,7 +43,9 @@ export default function UserCreation() {
         return <h1>Provide primary details</h1>
       case 1:
         return <h1>Provide additional details</h1>
-      case 2:
+      case 3:
+        return <h1>Professional details</h1>
+      case 4:
         return <h1>User creation Confirmation</h1>
       default:
         return <h1>Provide primary details</h1>

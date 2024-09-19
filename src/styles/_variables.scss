@@ -25,6 +25,13 @@ $font-xl: 18px;
 $font-xxl: 22px;
 $font-xxxl: 30px;
 
+// spacing
+$spacing-unit: 8px;
+$spacing-sm: $spacing-unit;
+$spacing-md: $spacing-unit * 2;
+$spacing-lg: $spacing-unit * 3;
+$spacing-xl: $spacing-unit * 4;
+
 // screen
 $screen-sm: 576px;
 $screen-md: 768px;
