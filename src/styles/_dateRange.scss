@@ -1,0 +1,12 @@
+.date-range-wrapper {
+  .date-range-picker {
+    position: relative;
+    @include flex(left, center, row);
+    .date-input-fields {
+      @include flex(left, center, row);
+      .spliter {
+        padding: $size-sm;
+      }
+    }
+  }
+}

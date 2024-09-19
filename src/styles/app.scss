@@ -1,4 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700);
+@import 'react-date-range/dist/styles.css'; // main style file
+@import 'react-date-range/dist/theme/default.css'; // theme css file
 @import './variables.scss';
 @import './mixins.scss';
 @import './layout.scss';
@@ -16,6 +18,7 @@
 @import './toaster.scss';
 @import './tabs.scss';
 @import './stepper.scss';
+@import './dateRange.scss';
 
 * {
   font-family: 'Open Sans', sans-serif;

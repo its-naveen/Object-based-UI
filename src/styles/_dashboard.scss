@@ -5,6 +5,12 @@
     height: 300px;
   }
   .grid-filter {
-    height: 80px;
+    padding: $size-md;
+    height: 60px;
+    box-sizing: border-box;
+    @include flex(left, center, row);
+    .filter-label {
+      margin-right: $size-sm;
+    }
   }
 }
