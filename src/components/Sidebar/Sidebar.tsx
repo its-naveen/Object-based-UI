@@ -20,8 +20,8 @@ export default function Sidebar() {
       link: '/user-creation'
     },
     {
-      label: 'setting',
-      link: '/setting'
+      label: 'gallery',
+      link: '/media'
     },
   ];
   return (

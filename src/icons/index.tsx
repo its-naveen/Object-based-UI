@@ -9,6 +9,7 @@ const SearchIcon = React.lazy(() => import("./search"));
 const DashboardIcon = React.lazy(() => import("./dashboard"));
 const UserIcon = React.lazy(() => import("./user"));
 const SettingIcon = React.lazy(() => import("./setting"));
+const MediaIcon = React.lazy(() => import("./media"));
 
 interface IconProps {
   iconKey: string;
@@ -27,6 +28,7 @@ const icons: Record<string, React.ReactNode> = {
   dashboard: <DashboardIcon />,
   user: <UserIcon />,
   setting: <SettingIcon />,
+  gallery: <MediaIcon />,
 }
 
 export default function Icons({ click, iconKey, type, badge, count }: IconProps) {

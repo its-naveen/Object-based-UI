@@ -4,7 +4,7 @@ import { capitalize } from 'lodash';
 
 const Breadcrumb = React.lazy(() => import('../../customComponents/Breadcrumb/Breadcrumb'));
 
-export default function Setting() {
+export default function Media() {
   const [activeStep, setActiveStep] = React.useState(1);
 
   const breadcrumbOption = [
@@ -13,24 +13,32 @@ export default function Setting() {
       link: '/',
     },
     {
-      label: 'setting',
-      link: '/setting',
+      label: 'media',
+      link: '/media',
     },
   ]
 
   const tabs = [
     {
-      label: 'basic',
+      label: 'all',
       step: 1,
     },
     {
-      label: 'additional',
+      label: 'posts',
       step: 2,
     },
     {
-      label: 'advance',
+      label: 'images',
       step: 3,
-    }
+    },
+    {
+      label: 'audios',
+      step: 4,
+    },
+    {
+      label: 'videos',
+      step: 5,
+    },
   ];
 
   const handleActiveStepChange = (step: number) => {
@@ -40,19 +48,23 @@ export default function Setting() {
   const handleGetStepContent = () => {
     switch (activeStep) {
       case 1:
-        return <h1>Basic Setting</h1>
+        return <h1>All</h1>
       case 2:
-        return <h1>Additional Setting</h1>
+        return <h1>Posts</h1>
       case 3:
-        return <h1>Advance Setting</h1>
+        return <h1>Images</h1>
+      case 4:
+        return <h1>Audios</h1>
+      case 5:
+        return <h1>Videos</h1>
       default:
-        return <h1>Basic Setting</h1>
+        return <h1>All</h1>
     }
   }
 
   return (
     <section className='setting'>
-      <h1 className='title' role='setting title'>Setting</h1>
+      <h1 className='title' role='setting title'>Media</h1>
       <Breadcrumb options={breadcrumbOption} />
       <Grid container spacing={2}>
         <Grid size={12} className='page-container'>

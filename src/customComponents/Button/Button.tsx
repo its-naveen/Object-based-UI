@@ -21,6 +21,7 @@ export default function CustomBtn(props: BtnProps) {
       role={`${props.children}-button`}
       onClick={props.click}
       disabled={props.disabled}
+      fullWidth
       startIcon={props.startIcon ? <Icons iconKey={props.startIcon} type={props.type} /> : undefined}>
       {props.children}
     </Button>
