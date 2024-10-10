@@ -19,6 +19,14 @@
 @import './tabs.scss';
 @import './stepper.scss';
 @import './dateRange.scss';
+@import './register.scss';
+
+:root {
+  --primary-clr: #{$primary-clr};
+  --secondary-clr: #{$secondary-clr};
+  --active-clr: #{$active};
+  --icon-badge-clr: #{$notification};
+}
 
 * {
   font-family: 'Open Sans', sans-serif;

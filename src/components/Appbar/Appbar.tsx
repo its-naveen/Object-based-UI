@@ -1,11 +1,22 @@
 import React from "react";
 import { Box } from "@mui/material";
+import { useNavigate } from "react-router";
+import { useToast } from "../../hooks/toaster";
 
 const Button = React.lazy(() => import("../../customComponents/Button/Button"));
 const Tooltip = React.lazy(() => import("../../customComponents/Tooltip/Tooltip"));
 const Icons = React.lazy(() => import("../../icons"));
 
 export default function Appbar() {
+  const router = useNavigate();
+  const { showToast } = useToast();
+
+  const gotoLogin = () => {
+    localStorage.removeItem('token');
+    showToast("Logout successful", "success");
+    router('/login', { replace: true });
+  };
+
   return (
     <nav className="appbar" role="appbar" aria-label="appbar">
       <h4 className="appbar-title">
@@ -19,13 +30,8 @@ export default function Appbar() {
           </Tooltip>
         </Box>
         <Box className='action'>
-          <Button primary={false} type="dark" click={() => console.log('clicked')}>
-            signin
-          </Button>
-        </Box>
-        <Box className='action'>
-          <Button primary={true} type="light" click={() => console.log('clicked')}>
-            login
+          <Button primary={false} type="light" click={gotoLogin}>
+            logout
           </Button>
         </Box>
       </div>

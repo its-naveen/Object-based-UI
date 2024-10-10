@@ -1,16 +1,17 @@
 import { Input } from "@mui/material";
 import CustomBtn from "../../customComponents/Button/Button";
 import React from "react";
-import { login } from "../../services/authService";
+import { signup } from "../../services/authService";
 import { useToast } from "../../hooks/toaster";
 import { useNavigate } from "react-router";
 import { capitalize, get } from "lodash";
 
 const initialState = {
-  email: ''
+  email: '',
+  username: '',
 };
 
-export default function Login() {
+export default function Signup() {
   const { showToast } = useToast();
   const router = useNavigate();
   const [ user, setUser ] = React.useState(initialState);
@@ -28,37 +29,39 @@ export default function Login() {
     console.log(user);
     try {
       setLoading(true);
-      const response = await login(user);
+      const response = await signup(user);
       console.log(response);
-      if (response.status === 200) {
+      if (response.status === 201) {
         setLoading(false);
         showToast(capitalize(get(response, 'data.message', '')), "success");
-        localStorage.setItem('token', get(response, 'data.token', ''));
-        router('/', { replace: true });
+        router('/login', { replace: true });
       }
     } catch (error) {
       setLoading(false);
-      showToast("Login failed", "error");
+      showToast('Error creation', 'error');
     } finally {
       setLoading(false);
     }
   }
 
-  const gotoSignup = () => {
-    router('/signup');
+  const gotoLogin = () => {
+    router('/login');
   }
 
   return (
     <div className="register-container">
       <form className="register-form" onSubmit={handleSubmit}>
-        <h1>Login</h1>
+        <h1>Signup</h1>
+        <Input 
+          className="reg-input" 
+          name="username" type="text" placeholder="User name" onChange={handleChange} value={user.username} />
         <Input 
           className="reg-input" 
           name="email" type="text" placeholder="Email" onChange={handleChange} value={user.email} />
         <CustomBtn primary={true} click={handleSubmit} type={"light"}>
-          {loading ? 'Loading...' : 'Login'}
+          {loading ? 'Creating...' : 'Create'}
         </CustomBtn>
-        <p className="redirect-link">New user? <span className="link" onClick={gotoSignup}>Signup</span></p>
+        <p className="redirect-link">Existing user? <span className="link" onClick={gotoLogin}>Login</span></p>
       </form>
     </div>
   );

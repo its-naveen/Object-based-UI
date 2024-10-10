@@ -37,10 +37,3 @@ $screen-sm: 576px;
 $screen-md: 768px;
 $screen-lg: 992px;
 $screen-xl: 1400px;
-
-:root {
-  --primary-clr: #{$primary-clr};
-  --secondary-clr: #{$secondary-clr};
-  --active-clr: #{$active};
-  --icon-badge-clr: #{$notification};
-}

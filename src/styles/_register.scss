@@ -1,0 +1,28 @@
+.register-container {
+  background: $bg-clr;
+  height: 100vh;
+  @include flex(center, center, row);
+  .register-form {
+    width: 380px;
+    background: $light;
+    box-sizing: border-box;
+    padding: $spacing-lg;
+    border-radius: $radius;
+    h1 {
+      margin: 0;
+    }
+    .reg-input {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      margin: $spacing-md 0;
+    }
+    .redirect-link {
+      font-size: $font-sm;
+    }
+    .link {
+      color: $primary-clr;
+      cursor: pointer;
+    }
+  }
+}
